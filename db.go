@@ -21,9 +21,5 @@ func initDb() *gorm.DB {
 		log.Println(err)
 	}
 
-	if err := db.AutoMigrate(&Miner{}, &IpAddress{}, &KeyValue{}); err != nil {
-		panic(err.Error())
-	}
-
 	return db
 }
