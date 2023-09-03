@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 
+	"gorm.io/driver/postgres"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
@@ -19,6 +20,20 @@ func initDb() *gorm.DB {
 
 	if err != nil {
 		log.Println(err)
+	}
+
+	return db
+}
+
+func initDbPg() *gorm.DB {
+	db, err := gorm.Open(postgres.Open(conf.DSN), &gorm.Config{})
+
+	if err != nil {
+		log.Println(err)
+	}
+
+	if err := db.AutoMigrate(&Miner{}, &IpAddress{}, &KeyValue{}); err != nil {
+		panic(err.Error())
 	}
 
 	return db

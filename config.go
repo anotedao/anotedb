@@ -8,7 +8,7 @@ import (
 
 // Config struct holds all our configuration
 type Config struct {
-	PublicKey string `json:"public_key"`
+	DSN string `json:"dsn"`
 }
 
 // Load method loads configuration file to Config struct
