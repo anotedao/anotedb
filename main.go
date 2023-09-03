@@ -26,9 +26,9 @@ func main() {
 
 	// counter := 0
 
-	// for _, m := range miners {
-	// 	dbpg.Save(m)
-	// }
+	for _, m := range miners {
+		dbpg.Save(m)
+	}
 
 	log.Println("done")
 }
