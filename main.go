@@ -24,11 +24,11 @@ func main() {
 	var miners []*Miner
 	db.Find(&miners)
 
-	counter := 0
+	// counter := 0
 
-	for range miners {
-		counter++
+	for _, m := range miners {
+		dbpg.Save(m)
 	}
 
-	log.Println(counter)
+	log.Println("done")
 }
