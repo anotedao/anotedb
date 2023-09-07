@@ -32,7 +32,7 @@ func initDbPg() *gorm.DB {
 		log.Println(err)
 	}
 
-	if err := db.AutoMigrate(&Miner{}, &IpAddress{}, &KeyValue{}); err != nil {
+	if err := db.AutoMigrate(&Miner{}, &IpAddress{}, &KeyValue{}, &User{}, &Alpha{}); err != nil {
 		panic(err.Error())
 	}
 

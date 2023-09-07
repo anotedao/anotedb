@@ -21,14 +21,14 @@ func main() {
 
 	dbpg = initDbPg()
 
-	var miners []*Miner
-	db.Find(&miners)
+	// var miners []*Miner
+	// db.Find(&miners)
 
-	// counter := 0
+	// // counter := 0
 
-	for _, m := range miners {
-		dbpg.Save(m)
-	}
+	// for _, m := range miners {
+	// 	dbpg.Save(m)
+	// }
 
 	log.Println("done")
 }
