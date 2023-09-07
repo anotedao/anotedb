@@ -16,7 +16,7 @@ func initDb() *gorm.DB {
 
 	dbconf.Logger = logger.Default.LogMode(logger.Error)
 
-	db, err = gorm.Open(sqlite.Open("../../anote-mobile/mobile.db"), &dbconf)
+	db, err = gorm.Open(sqlite.Open("../../anote-robot/robot.db"), &dbconf)
 
 	if err != nil {
 		log.Println(err)

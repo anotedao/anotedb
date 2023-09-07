@@ -30,5 +30,12 @@ func main() {
 	// 	dbpg.Save(m)
 	// }
 
+	var alphas []*Alpha
+	db.Find(alphas)
+
+	for _, a := range alphas {
+		dbpg.Save(a)
+	}
+
 	log.Println("done")
 }
