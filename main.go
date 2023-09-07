@@ -31,7 +31,7 @@ func main() {
 	// }
 
 	var alphas []*Alpha
-	db.Find(alphas)
+	db.Find(&alphas)
 
 	for _, a := range alphas {
 		dbpg.Save(a)
